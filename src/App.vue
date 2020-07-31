@@ -1,28 +1,40 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div id="app">
+        <div class="container">
+            <Trigger />
+        </div>
+        <div class="container">
+            <Action />
+        </div>
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Trigger from './components/Trigger';
+import Action from './components/Action';
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+    name: 'App',
+    components: {
+        Trigger,
+        Action,
+    },
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    line-height: 1.6;
+    background: #e8f7f0;
+}
+
+.container {
+    max-width: 40%;
+    display: inline-block;
+    margin: 0 5rem;
+    overflow: auto;
+    padding: 0 2rem;
+    background: rgba(128, 128, 128, 0.24);
 }
 </style>
