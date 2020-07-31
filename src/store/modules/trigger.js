@@ -35,9 +35,9 @@ const state = {
 };
 
 const getters = {
-    allServices: state => state.services,
+    allTriggerServices: state => state.services,
     getTrigger: state => service => state.triggers[service],
-    getDataset: state => service => state.dataSet[service],
+    getTriggerDataset: state => service => state.dataSet[service],
 };
 
 const actions = {};

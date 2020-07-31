@@ -1,7 +1,7 @@
 <template>
     <div>
         <h3>TRIGGERS</h3>
-        <Dropdown v-bind:options="allServices" v-on:optionSelected="fetchData" />
+        <Dropdown v-bind:options="allTriggerServices" v-on:optionSelected="fetchData" />
         <Dropdown v-if="showTriggers" v-bind:options="triggers" />
         <Dropdown v-if="showTriggers" v-bind:options="dataSet" />
     </div>
@@ -16,13 +16,11 @@ export default {
     components: {
         Dropdown,
     },
-    computed: mapGetters(['allServices']),
+    computed: mapGetters(['allTriggerServices']),
     methods: {
         fetchData(service) {
             this.triggers = this.$store.getters.getTrigger(service);
-            this.dataSet = this.$store.getters.getDataset(service);
-            console.log(this.triggers);
-            console.log(this.dataSet);
+            this.dataSet = this.$store.getters.getTriggerDataset(service);
             this.showTriggers = true;
         },
     },
