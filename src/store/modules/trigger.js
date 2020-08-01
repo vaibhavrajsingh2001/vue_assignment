@@ -1,5 +1,5 @@
 const state = {
-    services: ['Google Sheets', 'Slack', 'Stripe', 'Shopify'],
+    triggerServices: ['Google Sheets', 'Slack', 'Stripe', 'Shopify'],
     triggers: {
         'Google Sheets': [
             'New Worksheet',
@@ -35,14 +35,30 @@ const state = {
 };
 
 const getters = {
-    allTriggerServices: state => state.services,
+    allTriggerServices: state => state.triggerServices,
     getTrigger: state => service => state.triggers[service],
     getTriggerDataset: state => service => state.dataSet[service],
 };
 
-const actions = {};
+const actions = {
+    saveNewTriggerServices({ commit }, services) {
+        commit('setTriggerServices', services);
+    },
+    saveNewTriggers({ commit }, { triggers, triggerService }) {
+        commit('setTriggers', { triggers, triggerService });
+    },
+    saveNewTriggerDataSet({ commit }, { dataSet, triggerService }) {
+        commit('setTriggerDataSet', { dataSet, triggerService });
+    },
+};
 
-const mutations = {};
+const mutations = {
+    setTriggerServices: (state, services) => (state.triggerServices = services),
+    setTriggers: (state, { triggers, triggerService }) =>
+        (state.triggers[triggerService] = triggers),
+    setTriggerDataSet: (state, { dataSet, triggerService }) =>
+        (state.dataSet[triggerService] = dataSet),
+};
 
 export default {
     state,
