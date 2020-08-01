@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h3>Actions</h3>
+        <h3>ACTIONS</h3>
         <Dropdown
             v-bind:options="allActionServices"
             v-on:optionSelected="fetchData"

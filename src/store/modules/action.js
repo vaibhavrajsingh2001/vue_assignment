@@ -2,16 +2,16 @@ const state = {
     actionServices: ['Trello', 'twitter', 'Stripe', 'Shopify'],
     actions: {
         Trello: [
-            'Create Worksheet',
-            'Create Spreadsheet',
-            'Create Spreadsheet Row',
-            'Update Spreadsheet Row',
+            'Create or Update Contact',
+            'Add Tag to Contact',
+            'Create Board',
+            'Create card',
         ],
         twitter: [
-            'Send Channel Message',
-            'Create Channel',
-            'Add Reminder',
-            'Invite User to Channel',
+            'Create  Tweet',
+            'Add User to List',
+            'Update Profile Image',
+            'Search users',
         ],
         Stripe: [
             'Find Charge',
@@ -27,12 +27,7 @@ const state = {
         ],
     },
     dataSet: {
-        Trello: [
-            'Worksheet 1',
-            'Worksheet 2',
-            'Spreadsheet 1',
-            'Spreadsheet 2',
-        ],
+        Trello: ['Board 1', 'Board 2', 'Board 3', 'Board 4'],
         twitter: ['#frontend', '#feedback', '#competitors', '#checkins'],
         Stripe: ['Company A', 'Company B', 'Company C', 'Company D'],
         Shopify: ['Product W', 'product X', 'product Y', 'Product Z'],

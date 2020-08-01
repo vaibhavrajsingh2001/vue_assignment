@@ -50,6 +50,12 @@ const actions = {
     saveNewTriggerDataSet({ commit }, { dataSet, triggerService }) {
         commit('setTriggerDataSet', { dataSet, triggerService });
     },
+    createNewTriggerService({ commit }, { triggerService, triggers, dataSet }) {
+        let newServices = [...state.triggerServices, triggerService];
+        commit('setTriggerServices', newServices);
+        commit('setTriggers', { triggers, triggerService });
+        commit('setTriggerDataSet', { dataSet, triggerService });
+    },
 };
 
 const mutations = {

@@ -6,18 +6,23 @@
         <div class="container">
             <Action />
         </div>
+        <div class="container">
+            <AddTrigger />
+        </div>
     </div>
 </template>
 
 <script>
 import Trigger from './components/Trigger';
 import Action from './components/Action';
+import AddTrigger from './components/AddTrigger';
 
 export default {
     name: 'App',
     components: {
         Trigger,
         Action,
+        AddTrigger,
     },
 };
 </script>
