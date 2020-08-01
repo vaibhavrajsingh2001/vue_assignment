@@ -49,10 +49,20 @@ const actions = {
     saveNewActionServices({ commit }, services) {
         commit('setActionServices', services);
     },
+    saveNewActions({ commit }, { actions, actionService }) {
+        commit('setActions', { actions, actionService });
+    },
+    saveNewActionDataSet({ commit }, { dataSet, dataSetService }) {
+        commit('setActionDataSet', { dataSet, dataSetService });
+    },
 };
 
 const mutations = {
     setActionServices: (state, services) => (state.actionServices = services),
+    setActions: (state, { actions, actionService }) =>
+        (state.actions[actionService] = actions),
+    setActionDataSet: (state, { dataSet, dataSetService }) =>
+        (state.dataSet[dataSetService] = dataSet),
 };
 
 export default {
